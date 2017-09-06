@@ -1,4 +1,8 @@
-# Studi-Mat
+# Pizza-o-Mat
+Der Pizza-o-Mat ist ein Tool zur Auswahl einer passenden Pizza im Stil des Wahl-o-Maten.
+Er basiert technisch auf dem [Studi-Mat](https://github.com/AStA-TU-Darmstadt/studi-mat) des AStA der TU Darmstadt.
+
+## Studi-Mat
 Studi-Mat is a "Voting Orientation Application". It is based on the similar app [Mat-O-Wahl](http://www.mat-o-wahl.de/) but does not share much code with it any more and is not compatible.
 
 ## Rating algorithm
