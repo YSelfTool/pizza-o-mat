@@ -25,7 +25,7 @@
 		<meta name="language" content="de" />
 		<meta name="Content-Language" content="de" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" type="text/css" href="css/style.css" >
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}" >
 	</head>
 	<body>
 		<div id="middle">
@@ -94,6 +94,6 @@
 		<script type="text/javascript" src="{{url_for('static', filename='lang/de.js')}}"></script>
 		<script type="text/javascript" src="{{url_for('static', filename='lang/en.js')}}"></script>
 		<script src="{{url_for('static', filename='js/helper.js')}}"></script>
-		<script src="{{url_for('app_js', restaurant=restaurant)}}"></script>
+		<script src="{{url_for('app_js', town=town, plz=plz, restaurant=restaurant)}}"></script>
 	</body>
 </html>

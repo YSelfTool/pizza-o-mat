@@ -354,7 +354,7 @@ var studimat = function() {
     };
 
     // TODO: this should be configurable
-    httpRequest.open('GET', "data/{{restaurant_id}}_"+self.wahlomat_language+".json");
+    httpRequest.open('GET', "data/{{town}}_{{plz}}_{{restaurant.name}}.json");
     httpRequest.send();
   }
 

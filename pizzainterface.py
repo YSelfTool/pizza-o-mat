@@ -95,15 +95,17 @@ class Food:
         return str(self)
 
 class Restaurant:
-    def __init__(self, name, uri):
+    def __init__(self, name, id, uri):
         self.name = name
+        self.id = id
         self.uri = uri
 
     @staticmethod
     def from_dict(item):
         name = item["name"]
+        id = item["id"]
         uri = RESTAURANT_URL.format(item["slug"], item["id"])
-        return Restaurant(name, uri)
+        return Restaurant(name, id, uri)
 
     def __str__(self):
         return self.name
