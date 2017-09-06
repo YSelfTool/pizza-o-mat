@@ -184,10 +184,15 @@ def extract_restaurants(town, plz):
         restaurants.append(Restaurant.from_dict(restaurant_data))
     return restaurants
 
-def main():
-    #print(generate_pizza_data("index.html"))
-    restaurants = extract_restaurants("aachen", "52062")
-    print(generate_pizza_data(restaurants[0]))
+def validate_location(town, plz):
+    plz = str(plz)
+    if not town.isalpha() or not plz.isnumeric() or len(plz) > 5:
+        return False
+    url = RESTAURANTS_URL.format(town, str(plz))
+    result = requests.get(url)
+    return result.status_code == 200
+
 
 if __name__ == "__main__":
-    main()
+    restaurants = extract_restaurants("aachen", "52062")
+    print(generate_pizza_data(restaurants[0]))
