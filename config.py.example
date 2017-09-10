@@ -1,0 +1,6 @@
+SECRET_KEY = "some random string"
+
+DEBUG = False
+
+CACHE_DIR = "/tmp/pizzaomat-cache/"
+CACHE_TIME = 3600

@@ -113,6 +113,17 @@ class Restaurant:
     def __repr__(self):
         return "{} -> {}".format(self.name, self.uri)
 
+    def to_json(self):
+        return {
+            "name": self.name,
+            "id": self.id,
+            "uri": self.uri
+        }
+
+    @staticmethod
+    def from_json(data):
+        return Restaurant(name=data["name"], id=data["id"], uri=data["uri"])
+
 def extract_pizza(data):
     menu = data["restaurant"]["info"]["menu"]
     known_names = set([])
