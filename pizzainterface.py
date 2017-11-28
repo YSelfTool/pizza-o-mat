@@ -175,8 +175,8 @@ def generate_pizza_data(restaurant):
     page_content = requests.get(restaurant.uri).text
     data = extract_data_content(page_content)
     menu = data["restaurant"]["info"]["menu"]
-    import pprint
-    pp = pprint.PrettyPrinter(indent=2)
+    #import pprint
+    #pp = pprint.PrettyPrinter(indent=2, depth=3)
     pizzas = extract_pizza(data)
     known_ingredients = set([ingredient.name for pizza in pizzas for ingredient in pizza.ingredients])
     ingredient_name_map = summarize_ingredients(known_ingredients)
@@ -191,7 +191,9 @@ def extract_restaurants(town, plz):
     content = requests.get(url).text
     data = extract_data_content(content)
     restaurants = []
-    for restaurant_data in data["restaurants"]["list"]:
+    #import pprint
+    #pp = pprint.PrettyPrinter(indent=2, depth=3)
+    for restaurant_data in data["restaurantList"]["mainRestaurants"]["list"]:
         if "pizza-pasta" not in restaurant_data["cuisines"] or restaurant_data["status"] != "open":
             continue
         restaurants.append(Restaurant.from_dict(restaurant_data))
